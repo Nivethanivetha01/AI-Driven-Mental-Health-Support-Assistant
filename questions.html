@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff6f61;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .questionnaire {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .questionnaire h2 {
+            margin-bottom: 20px;
+        }
+        .questionnaire label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .questionnaire .options {
+            margin-bottom: 20px;
+        }
+        .questionnaire button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .questionnaire button:hover {
+            background-color: #e55b50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Mental Health Assessment</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <div class="questionnaire">
+            <h2>Please answer the following questions:</h2>
+            <form action="{{ url_for('submit_questions') }}" method="POST">
+                <!-- 20 Questions with Options -->
+
+                <label for="question1">1. How often do you feel overwhelmed by daily tasks?</label>
+                <div class="options">
+                    <input type="radio" id="q1_opt1" name="question1" value="Never" required>
+                    <label for="q1_opt1">Never</label><br>
+                    <input type="radio" id="q1_opt2" name="question1" value="Rarely">
+                    <label for="q1_opt2">Rarely</label><br>
+                    <input type="radio" id="q1_opt3" name="question1" value="Sometimes">
+                    <label for="q1_opt3">Sometimes</label><br>
+                    <input type="radio" id="q1_opt4" name="question1" value="Often">
+                    <label for="q1_opt4">Often</label><br>
+                    <input type="radio" id="q1_opt5" name="question1" value="Always">
+                    <label for="q1_opt5">Always</label>
+                </div>
+
+                <label for="question2">2. Do you find it hard to concentrate on tasks?</label>
+                <div class="options">
+                    <input type="radio" id="q2_opt1" name="question2" value="Never" required>
+                    <label for="q2_opt1">Never</label><br>
+                    <input type="radio" id="q2_opt2" name="question2" value="Rarely">
+                    <label for="q2_opt2">Rarely</label><br>
+                    <input type="radio" id="q2_opt3" name="question2" value="Sometimes">
+                    <label for="q2_opt3">Sometimes</label><br>
+                    <input type="radio" id="q2_opt4" name="question2" value="Often">
+                    <label for="q2_opt4">Often</label><br>
+                    <input type="radio" id="q2_opt5" name="question2" value="Always">
+                    <label for="q2_opt5">Always</label>
+                </div>
+
+                <label for="question3">3. How often do you feel anxious or worried?</label>
+                <div class="options">
+                    <input type="radio" id="q3_opt1" name="question3" value="Never" required>
+                    <label for="q3_opt1">Never</label><br>
+                    <input type="radio" id="q3_opt2" name="question3" value="Rarely">
+                    <label for="q3_opt2">Rarely</label><br>
+                    <input type="radio" id="q3_opt3" name="question3" value="Sometimes">
+                    <label for="q3_opt3">Sometimes</label><br>
+                    <input type="radio" id="q3_opt4" name="question3" value="Often">
+                    <label for="q3_opt4">Often</label><br>
+                    <input type="radio" id="q3_opt5" name="question3" value="Always">
+                    <label for="q3_opt5">Always</label>
+                </div>
+
+                <label for="question4">4. Do you have trouble sleeping or staying asleep?</label>
+                <div class="options">
+                    <input type="radio" id="q4_opt1" name="question4" value="Never" required>
+                    <label for="q4_opt1">Never</label><br>
+                    <input type="radio" id="q4_opt2" name="question4" value="Rarely">
+                    <label for="q4_opt2">Rarely</label><br>
+                    <input type="radio" id="q4_opt3" name="question4" value="Sometimes">
+                    <label for="q4_opt3">Sometimes</label><br>
+                    <input type="radio" id="q4_opt4" name="question4" value="Often">
+                    <label for="q4_opt4">Often</label><br>
+                    <input type="radio" id="q4_opt5" name="question4" value="Always">
+                    <label for="q4_opt5">Always</label>
+                </div>
+
+                <label for="question5">5. How frequently do you feel sad or depressed?</label>
+                <div class="options">
+                    <input type="radio" id="q5_opt1" name="question5" value="Never" required>
+                    <label for="q5_opt1">Never</label><br>
+                    <input type="radio" id="q5_opt2" name="question5" value="Rarely">
+                    <label for="q5_opt2">Rarely</label><br>
+                    <input type="radio" id="q5_opt3" name="question5" value="Sometimes">
+                    <label for="q5_opt3">Sometimes</label><br>
+                    <input type="radio" id="q5_opt4" name="question5" value="Often">
+                    <label for="q5_opt4">Often</label><br>
+                    <input type="radio" id="q5_opt5" name="question5" value="Always">
+                    <label for="q5_opt5">Always</label>
+                </div>
+
+                <label for="question6">6. Do you avoid social situations or activities you used to enjoy?</label>
+                <div class="options">
+                    <input type="radio" id="q6_opt1" name="question6" value="Never" required>
+                    <label for="q6_opt1">Never</label><br>
+                    <input type="radio" id="q6_opt2" name="question6" value="Rarely">
+                    <label for="q6_opt2">Rarely</label><br>
+                    <input type="radio" id="q6_opt3" name="question6" value="Sometimes">
+                    <label for="q6_opt3">Sometimes</label><br>
+                    <input type="radio" id="q6_opt4" name="question6" value="Often">
+                    <label for="q6_opt4">Often</label><br>
+                    <input type="radio" id="q6_opt5" name="question6" value="Always">
+                    <label for="q6_opt5">Always</label>
+                </div>
+
+                <label for="question7">7. How often do you feel stressed or overwhelmed at work?</label>
+                <div class="options">
+                    <input type="radio" id="q7_opt1" name="question7" value="Never" required>
+                    <label for="q7_opt1">Never</label><br>
+                    <input type="radio" id="q7_opt2" name="question7" value="Rarely">
+                    <label for="q7_opt2">Rarely</label><br>
+                    <input type="radio" id="q7_opt3" name="question7" value="Sometimes">
+                    <label for="q7_opt3">Sometimes</label><br>
+                    <input type="radio" id="q7_opt4" name="question7" value="Often">
+                    <label for="q7_opt4">Often</label><br>
+                    <input type="radio" id="q7_opt5" name="question7" value="Always">
+                    <label for="q7_opt5">Always</label>
+                </div>
+
+                <label for="question8">8. Do you feel like you lack support from family or friends?</label>
+                <div class="options">
+                    <input type="radio" id="q8_opt1" name="question8" value="Never" required>
+                    <label for="q8_opt1">Never</label><br>
+                    <input type="radio" id="q8_opt2" name="question8" value="Rarely">
+                    <label for="q8_opt2">Rarely</label><br>
+                    <input type="radio" id="q8_opt3" name="question8" value="Sometimes">
+                    <label for="q8_opt3">Sometimes</label><br>
+                    <input type="radio" id="q8_opt4" name="question8" value="Often">
+                    <label for="q8_opt4">Often</label><br>
+                    <input type="radio" id="q8_opt5" name="question8" value="Always">
+                    <label for="q8_opt5">Always</label>
+                </div>
+
+                <label for="question9">9. How often do you feel a lack of motivation?</label>
+                <div class="options">
+                    <input type="radio" id="q9_opt1" name="question9" value="Never" required>
+                    <label for="q9_opt1">Never</label><br>
+                    <input type="radio" id="q9_opt2" name="question9" value="Rarely">
+                    <label for="q9_opt2">Rarely</label><br>
+                    <input type="radio" id="q9_opt3" name="question9" value="Sometimes">
+                    <label for="q9_opt3">Sometimes</label><br>
+                    <input type="radio" id="q9_opt4" name="question9" value="Often">
+                    <label for="q9_opt4">Often</label><br>
+                    <input type="radio" id="q9_opt5" name="question9" value="Always">
+                    <label for="q9_opt5">Always</label>
+                </div>
+
+                <label for="question10">10. Do you experience physical symptoms like headaches or stomachaches without a clear cause?</label>
+                <div class="options">
+                    <input type="radio" id="q10_opt1" name="question10" value="Never" required>
+                    <label for="q10_opt1">Never</label><br>
+                    <input type="radio" id="q10_opt2" name="question10" value="Rarely">
+                    <label for="q10_opt2">Rarely</label><br>
+                    <input type="radio" id="q10_opt3" name="question10" value="Sometimes">
+                    <label for="q10_opt3">Sometimes</label><br>
+                    <input type="radio" id="q10_opt4" name="question10" value="Often">
+                    <label for="q10_opt4">Often</label><br>
+                    <input type="radio" id="q10_opt5" name="question10" value="Always">
+                    <label for="q10_opt5">Always</label>
+                </div>
+
+                <label for="question11">11. How often do you feel irritable or angry?</label>
+                <div class="options">
+                    <input type="radio" id="q11_opt1" name="question11" value="Never" required>
+                    <label for="q11_opt1">Never</label><br>
+                    <input type="radio" id="q11_opt2" name="question11" value="Rarely">
+                    <label for="q11_opt2">Rarely</label><br>
+                    <input type="radio" id="q11_opt3" name="question11" value="Sometimes">
+                    <label for="q11_opt3">Sometimes</label><br>
+                    <input type="radio" id="q11_opt4" name="question11" value="Often">
+                    <label for="q11_opt4">Often</label><br>
+                    <input type="radio" id="q11_opt5" name="question11" value="Always">
+                    <label for="q11_opt5">Always</label>
+                </div>
+
+                <label for="question12">12. Do you struggle with feelings of guilt or shame?</label>
+                <div class="options">
+                    <input type="radio" id="q12_opt1" name="question12" value="Never" required>
+                    <label for="q12_opt1">Never</label><br>
+                    <input type="radio" id="q12_opt2" name="question12" value="Rarely">
+                    <label for="q12_opt2">Rarely</label><br>
+                    <input type="radio" id="q12_opt3" name="question12" value="Sometimes">
+                    <label for="q12_opt3">Sometimes</label><br>
+                    <input type="radio" id="q12_opt4" name="question12" value="Often">
+                    <label for="q12_opt4">Often</label><br>
+                    <input type="radio" id="q12_opt5" name="question12" value="Always">
+                    <label for="q12_opt5">Always</label>
+                </div>
+
+                <label for="question13">13. How often do you find yourself feeling lonely?</label>
+                <div class="options">
+                    <input type="radio" id="q13_opt1" name="question13" value="Never" required>
+                    <label for="q13_opt1">Never</label><br>
+                    <input type="radio" id="q13_opt2" name="question13" value="Rarely">
+                    <label for="q13_opt2">Rarely</label><br>
+                    <input type="radio" id="q13_opt3" name="question13" value="Sometimes">
+                    <label for="q13_opt3">Sometimes</label><br>
+                    <input type="radio" id="q13_opt4" name="question13" value="Often">
+                    <label for="q13_opt4">Often</label><br>
+                    <input type="radio" id="q13_opt5" name="question13" value="Always">
+                    <label for="q13_opt5">Always</label>
+                </div>
+
+                <label for="question14">14. Do you feel like your daily routine is monotonous or unfulfilling?</label>
+                <div class="options">
+                    <input type="radio" id="q14_opt1" name="question14" value="Never" required>
+                    <label for="q14_opt1">Never</label><br>
+                    <input type="radio" id="q14_opt2" name="question14" value="Rarely">
+                    <label for="q14_opt2">Rarely</label><br>
+                    <input type="radio" id="q14_opt3" name="question14" value="Sometimes">
+                    <label for="q14_opt3">Sometimes</label><br>
+                    <input type="radio" id="q14_opt4" name="question14" value="Often">
+                    <label for="q14_opt4">Often</label><br>
+                    <input type="radio" id="q14_opt5" name="question14" value="Always">
+                    <label for="q14_opt5">Always</label>
+                </div>
+
+                <label for="question15">15. How often do you feel that you are not in control of your emotions?</label>
+                <div class="options">
+                    <input type="radio" id="q15_opt1" name="question15" value="Never" required>
+                    <label for="q15_opt1">Never</label><br>
+                    <input type="radio" id="q15_opt2" name="question15" value="Rarely">
+                    <label for="q15_opt2">Rarely</label><br>
+                    <input type="radio" id="q15_opt3" name="question15" value="Sometimes">
+                    <label for="q15_opt3">Sometimes</label><br>
+                    <input type="radio" id="q15_opt4" name="question15" value="Often">
+                    <label for="q15_opt4">Often</label><br>
+                    <input type="radio" id="q15_opt5" name="question15" value="Always">
+                    <label for="q15_opt5">Always</label>
+                </div>
+
+                <label for="question16">16. Do you have trouble managing stress or pressure?</label>
+                <div class="options">
+                    <input type="radio" id="q16_opt1" name="question16" value="Never" required>
+                    <label for="q16_opt1">Never</label><br>
+                    <input type="radio" id="q16_opt2" name="question16" value="Rarely">
+                    <label for="q16_opt2">Rarely</label><br>
+                    <input type="radio" id="q16_opt3" name="question16" value="Sometimes">
+                    <label for="q16_opt3">Sometimes</label><br>
+                    <input type="radio" id="q16_opt4" name="question16" value="Often">
+                    <label for="q16_opt4">Often</label><br>
+                    <input type="radio" id="q16_opt5" name="question16" value="Always">
+                    <label for="q16_opt5">Always</label>
+                </div>
+
+                <label for="question17">17. Do you feel overwhelmed by your responsibilities?</label>
+                <div class="options">
+                    <input type="radio" id="q17_opt1" name="question17" value="Never" required>
+                    <label for="q17_opt1">Never</label><br>
+                    <input type="radio" id="q17_opt2" name="question17" value="Rarely">
+                    <label for="q17_opt2">Rarely</label><br>
+                    <input type="radio" id="q17_opt3" name="question17" value="Sometimes">
+                    <label for="q17_opt3">Sometimes</label><br>
+                    <input type="radio" id="q17_opt4" name="question17" value="Often">
+                    <label for="q17_opt4">Often</label><br>
+                    <input type="radio" id="q17_opt5" name="question17" value="Always">
+                    <label for="q17_opt5">Always</label>
+                </div>
+
+                <label for="question18">18. How often do you feel unsupported in your personal or professional life?</label>
+                <div class="options">
+                    <input type="radio" id="q18_opt1" name="question18" value="Never" required>
+                    <label for="q18_opt1">Never</label><br>
+                    <input type="radio" id="q18_opt2" name="question18" value="Rarely">
+                    <label for="q18_opt2">Rarely</label><br>
+                    <input type="radio" id="q18_opt3" name="question18" value="Sometimes">
+                    <label for="q18_opt3">Sometimes</label><br>
+                    <input type="radio" id="q18_opt4" name="question18" value="Often">
+                    <label for="q18_opt4">Often</label><br>
+                    <input type="radio" id="q18_opt5" name="question18" value="Always">
+                    <label for="q18_opt5">Always</label>
+                </div>
+
+                <label for="question19">19. Do you feel a lack of balance between your work and personal life?</label>
+                <div class="options">
+                    <input type="radio" id="q19_opt1" name="question19" value="Never" required>
+                    <label for="q19_opt1">Never</label><br>
+                    <input type="radio" id="q19_opt2" name="question19" value="Rarely">
+                    <label for="q19_opt2">Rarely</label><br>
+                    <input type="radio" id="q19_opt3" name="question19" value="Sometimes">
+                    <label for="q19_opt3">Sometimes</label><br>
+                    <input type="radio" id="q19_opt4" name="question19" value="Often">
+                    <label for="q19_opt4">Often</label><br>
+                    <input type="radio" id="q19_opt5" name="question19" value="Always">
+                    <label for="q19_opt5">Always</label>
+                </div>
+
+                <label for="question20">20. How often do you experience feelings of hopelessness?</label>
+                <div class="options">
+                    <input type="radio" id="q20_opt1" name="question20" value="Never" required>
+                    <label for="q20_opt1">Never</label><br>
+                    <input type="radio" id="q20_opt2" name="question20" value="Rarely">
+                    <label for="q20_opt2">Rarely</label><br>
+                    <input type="radio" id="q20_opt3" name="question20" value="Sometimes">
+                    <label for="q20_opt3">Sometimes</label><br>
+                    <input type="radio" id="q20_opt4" name="question20" value="Often">
+                    <label for="q20_opt4">Often</label><br>
+                    <input type="radio" id="q20_opt5" name="question20" value="Always">
+                    <label for="q20_opt5">Always</label>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

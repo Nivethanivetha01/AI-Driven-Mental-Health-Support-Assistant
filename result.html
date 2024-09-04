@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessment Result</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Basic CSS for the result page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .result-box {
+            padding: 20px;
+            background-color: #e7f4e4;
+            border: 1px solid #d4edda;
+            border-radius: 8px;
+            color: #155724;
+        }
+        .result-box h1 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+         h1 {
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        li {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        li:hover {
+            transform: translateY(-5px);
+        }
+        li h3 {
+            color: #ff6f61;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        li p {
+            color: #333;
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        li p strong {
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result-box">
+            <h1>Your Mental Health Assessment Result</h1>
+            <p>{{ result }}</p>
+             <h2> 
+            <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+        </div>
+       <body>
+    <div id="notification" style="
+        display: none; /* Initially hidden */
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-family: Arial, sans-serif;
+        z-index: 1000;
+    ">
+        If you want to relax, just scroll down for some suggestions!!!
+    </div>
+
+    <script>
+        // Function to show the notification
+        function showNotification() {
+            document.getElementById('notification').style.display = 'block';
+        }
+
+        // Function to hide the notification
+        function hideNotification() {
+            document.getElementById('notification').style.display = 'none';
+        }
+        // Show the notification after 10 seconds
+        setTimeout(showNotification, 1000);
+        setTimeout(hideNotification, 3000);
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Recommendations</title>
+</head>
+<body style="background-color: #f0f8ff; color: #333; font-family: Arial, sans-serif; padding: 20px;">
+
+    <h1 style="text-align: center; color: #1e90ff;">Tamil Song Recommendations</h1>
+    <ul style="list-style-type: none; padding: 0;">
+        <li style="padding: 10px; background-color: #ffebcd; margin-bottom: 5px;">
+            <strong>Motta Maadi Music</strong> - <em>Oh Manapenne!</em>
+        </li>
+        <li style="padding: 10px; background-color: #ffe4e1; margin-bottom: 5px;">
+            <strong>Nenjukkul Peidhidum</strong> - <em>Vaaranam Aayiram</em>
+        </li>
+        <li style="padding: 10px; background-color: #e6e6fa; margin-bottom: 5px;">
+            <strong>Aalaporan Tamizhan</strong> - <em>Mersal</em>
+        </li>
+        <li style="padding: 10px; background-color: #fafad2; margin-bottom: 5px;">
+            <strong>Anbae Peranbae</strong> - <em>NGK</em>
+        </li>
+        <li style="padding: 10px; background-color: #d3ffce; margin-bottom: 5px;">
+            <strong>Oday Oday</strong> - <em>Vettai</em>
+        </li>
+        <li style="padding: 10px; background-color: #ffd700; margin-bottom: 5px;">
+            <strong>Kanave Kanave</strong> - <em>David</em>
+        </li>
+        <li style="padding: 10px; background-color: #ffdab9; margin-bottom: 5px;">
+            <strong>Kannana Kanne</strong> - <em>Viswasam</em>
+        </li>
+        <li style="padding: 10px; background-color: #afeeee; margin-bottom: 5px;">
+            <strong>Maruvaarthai</strong> - <em>Enai Noki Paayum Thota</em>
+        </li>
+        <li style="padding: 10px; background-color: #dda0dd; margin-bottom: 5px;">
+            <strong>Unna Nenachu</strong> - <em>Psycho</em>
+        </li>
+        <li style="padding: 10px; background-color: #f5f5dc; margin-bottom: 5px;">
+            <strong>Munbe Vaa</strong> - <em>Sillunu Oru Kaadhal</em>
+        </li>
+    </ul>
+
+    <h1 style="text-align: center; color: #ff4500;">English Song Recommendations</h1>
+    <ul style="list-style-type: none; padding: 0;">
+        <li style="padding: 10px; background-color: #b0e0e6; margin-bottom: 5px;">
+            <strong>Here Comes the Sun</strong> - <em>The Beatles</em>
+        </li>
+        <li style="padding: 10px; background-color: #ffefd5; margin-bottom: 5px;">
+            <strong>Happy</strong> - <em>Pharrell Williams</em>
+        </li>
+        <li style="padding: 10px; background-color: #98fb98; margin-bottom: 5px;">
+            <strong>Don't Stop Believin'</strong> - <em>Journey</em>
+        </li>
+        <li style="padding: 10px; background-color: #dda0dd; margin-bottom: 5px;">
+            <strong>Shake It Off</strong> - <em>Taylor Swift</em>
+        </li>
+        <li style="padding: 10px; background-color: #f0e68c; margin-bottom: 5px;">
+            <strong>What a Wonderful World</strong> - <em>Louis Armstrong</em>
+        </li>
+        <li style="padding: 10px; background-color: #ff6347; margin-bottom: 5px;">
+            <strong>Roar</strong> - <em>Katy Perry</em>
+        </li>
+        <li style="padding: 10px; background-color: #87ceeb; margin-bottom: 5px;">
+            <strong>Unwritten</strong> - <em>Natasha Bedingfield</em>
+        </li>
+        <li style="padding: 10px; background-color: #fffacd; margin-bottom: 5px;">
+            <strong>Three Little Birds</strong> - <em>Bob Marley</em>
+        </li>
+        <li style="padding: 10px; background-color: #ffc0cb; margin-bottom: 5px;">
+            <strong>Stronger (What Doesn’t Kill You)</strong> - <em>Kelly Clarkson</em>
+        </li>
+        <li style="padding: 10px; background-color: #00ced1; margin-bottom: 5px;">
+            <strong>You Are the Sunshine of My Life</strong> - <em>Stevie Wonder</em>
+        </li>
+    </ul>
+
+</body>
+</html>
+
+    <div style="background-color: #ffffff; border-radius: 15px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); width: 90%; max-width: 900px; margin: 20px; padding: 20px; text-align: center;">
+        <h1 style="color: #ff4500; font-size: 2.5em; margin-bottom: 10px;">English Movie Recommendations</h1>
+        <ul style="list-style-type: none; padding: 0; margin: 20px 0;">
+            <li style="background: linear-gradient(to right, #ffb3ba, #ffdfba); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">The Pursuit of Happyness (2006)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Biography, Drama</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> A powerful story of perseverance, resilience, and hope in the face of adversity.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #ffdfba, #ffffba); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">Good Will Hunting (1997)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Drama</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> Explores themes of self-worth, mental health, and the importance of seeking help.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #ffffba, #baffc9); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">Forrest Gump (1994)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Drama, Romance</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> Celebrates life's journey with a message of kindness, love, and persistence.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #baffc9, #bae1ff); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">A Beautiful Mind (2001)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Biography, Drama</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> A story of overcoming mental illness and finding strength in love and intellect.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #bae1ff, #e0c3fc); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">The Intouchables (2011)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Biography, Comedy, Drama</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> A heartwarming tale of friendship that transcends social barriers, filled with humor and empathy.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #e0c3fc, #ff9a9e); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">Silver Linings Playbook (2012)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Comedy, Drama, Romance</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> Addresses mental health issues with sensitivity, showing the power of love and support.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #ff9a9e, #fecfef); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">Inside Out (2015)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Animation, Adventure, Comedy</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> A creative exploration of emotions, helping viewers understand and manage their feelings.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #fecfef, #c9ffbf); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff4500; font-size: 1.5em; margin-bottom: 5px;">Patch Adams (1998)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Genre:</strong> Biography, Comedy, Drama</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff4500;">Why:</strong> Shows how laughter and compassion can be powerful tools in healing and coping with life's challenges.</p>
+            </li>
+        </ul>
+    </div>
+    <div style="background-color: #ffffff; border-radius: 15px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); width: 90%; max-width: 900px; margin: 20px; padding: 20px; text-align: center;">
+        <h1 style="color: #ff6f61; font-size: 2.5em; margin-bottom: 10px;">Tamil Movie Recommendations</h1>
+        <ul style="list-style-type: none; padding: 0; margin: 20px 0;">
+            <li style="background: linear-gradient(to right, #ffb3ba, #ffdfba); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Anbe Sivam (2003)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Anbe Sivam</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A heartwarming story about love, kindness, and human connection.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #ffdfba, #ffffba); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Mouna Ragam (1986)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Mouna Ragam</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A classic that explores themes of love and emotional turmoil.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #ffffba, #baffc9); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Vinnaithaandi Varuvaayaa (2010)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Vinnaithaandi Varuvaayaa</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A poignant love story that deals with themes of destiny and personal growth.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #baffc9, #bae1ff); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Pariyerum Perumal (2018)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Pariyerum Perumal</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A compelling narrative that highlights social issues and personal resilience.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #bae1ff, #e0c3fc); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Kaadhal (2004)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Kaadhal</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A touching story about the struggles and triumphs in love.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #e0c3fc, #ff9a9e); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Thanga Meengal (2013)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Thanga Meengal</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A moving film that reflects on family and personal struggles.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #ff9a9e, #fecfef); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Siraichalai (1990)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Siraichalai</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> Explores themes of love, sacrifice, and redemption.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #fecfef, #c9ffbf); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Kangalal Kaidhu Sei (2003)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Kangalal Kaidhu Sei</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A gripping tale with deep emotional undertones.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #c9ffbf, #ffb3ba); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Iruvar (1997)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Iruvar</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A film that delves into the lives of two political leaders, touching on personal and political conflicts.</p>
+            </li>
+            <li style="background: linear-gradient(to right, #ffb3ba, #ffdfba); margin-bottom: 15px; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+                <h3 style="color: #ff6f61; font-size: 1.5em; margin-bottom: 5px;">Pithamagan (2003)</h3>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Movie:</strong> Pithamagan</p>
+                <p style="color: #333; font-size: 1em; margin: 5px 0;"><strong style="color: #ff6f61;">Why:</strong> A unique story of a man with a troubled past finding redemption.</p>
+            </li>
+        </ul>
+    </div>
+
+   <script>
+        function showNotification(movie) {
+            const notification = document.getElementById('notification');
+            notification.innerHTML = `You clicked on: ${movie}`;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+
+
+
